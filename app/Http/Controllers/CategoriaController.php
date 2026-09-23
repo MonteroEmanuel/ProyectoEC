@@ -29,6 +29,11 @@ class CategoriaController extends Controller
         }
     }
 
+     public function showParentCategories()
+    {
+        $categorias = Categoria::whereNull('padre_id')->get();
+        return response()->json($categorias);
+    }
 
     public function show($id): JsonResponse{
         $categoria = Categoria::find($id);

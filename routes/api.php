@@ -8,11 +8,13 @@ use App\Http\Controllers\ProductoController;
 use App\Http\Controllers\MarcaController;
 
 // Categorias Routes
+Route::get('/categorias/padre', [CategoriaController::class, 'showParentCategories']);
 Route::post('/categorias', [CategoriaController::class, 'store']);
 Route::put('/categorias/{id}', [CategoriaController::class, 'update']);
 Route::delete('/categorias/{id}', [CategoriaController::class, 'destroy']);
 Route::get('/categorias', [CategoriaController::class, 'index']);
 Route::get('/categorias/{id}', [CategoriaController::class, 'show']);
+
 
 // Productos Routes
 Route::post('/productos', [ProductoController::class, 'store']);
