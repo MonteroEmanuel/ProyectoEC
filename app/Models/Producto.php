@@ -17,6 +17,11 @@ class Producto extends Model
         'url_imagen',
         'estado'
     ];
+    // Precio como número en el JSON (decimal se serializa como texto)
+    protected $casts = [
+        'precio' => 'float',
+        'stock'  => 'integer',
+    ];
     public function categoria(): BelongsTo
     {
         return $this->belongsTo(Categoria::class);
